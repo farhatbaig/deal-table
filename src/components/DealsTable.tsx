@@ -44,7 +44,10 @@ function getStatusColor(status: string) {
 }
 
 export default function DealsTable() {
-  const [visibleCols, setVisibleCols] = useState(() => allColumns.map(c => c.key));
+  const [visibleCols, setVisibleCols] = useState(() => [
+    'name', 'owner', 'stage', 'status', 'amount', 'created', 'updated',
+    'custom1', 'custom2', 'custom3', 'custom4'
+  ]);
   const [colOrder, setColOrder] = useState(() => allColumns.map(c => c.key));
   const [colWidths, setColWidths] = useState<Record<string, number>>({});
   const [headerMenu, setHeaderMenu] = useState<{ x: number; y: number; colKey: string } | null>(null);
